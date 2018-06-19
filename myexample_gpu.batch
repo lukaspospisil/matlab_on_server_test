@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH --time=00:10:00
+#SBATCH --output=myoutput-m-%j.out
+#SBATCH --error=myerror-m-%j.err
+#SBATCH --nodes=1
+#SBATCH --mem=64040
+#SBATCH --ntasks-per-node=1
+#SBATCH --exclusive
+#SBATCH --partition=slim
+
+echo Starting myProgram
+echo ----------------------------------------------------
+
+module load matlab
+cd ~/matlab_on_server_test
+matlab -nodesktop -r "myparameter=10;runme;exit"
+
+echo ----------------------------------------------------
+echo Happy shutdown
+
