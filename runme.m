@@ -1,6 +1,6 @@
 % myparameter should be provided in terminal
 % run using:
-% matlab -nodesktop -nosplash -sd ~/Documents/MATLAB/matlab_on_server_test/ -r "myparameter=10;runme"
+% matlab -nodesktop -sd ~/Documents/MATLAB/matlab_on_server_test/ -r "myparameter=10;runme;exit"
 % where the path is the path where "runme.m" is located
 %
 
@@ -12,5 +12,4 @@ fprintf(fileID,'Hello World from Matlab fprintf into file\n');
 fprintf(fileID,'provided parameter: %f\n', myparameter);
 fclose(fileID);
 
-% close matlab, we will not need it anymore
-exit 
+% do not forget to close matlab, we will not need it anymore
