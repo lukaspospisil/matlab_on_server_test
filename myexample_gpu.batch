@@ -1,16 +1,17 @@
 #!/bin/bash
 #SBATCH --time=00:10:00
-#SBATCH --output=myoutput-m-%j.out
+#SBATCH --output=myoutput_gpu-m-%j.out
 #SBATCH --error=myerror-m-%j.err
 #SBATCH --nodes=1
-#SBATCH --mem=64040
+#SBATCH --mem=128080
 #SBATCH --ntasks-per-node=1
 #SBATCH --exclusive
-#SBATCH --partition=slim
+#SBATCH --partition=gpu
 
 echo Starting myProgram
 echo ----------------------------------------------------
 
+module load cudatoolkit
 module load matlab
 cd ~/matlab_on_server_test
 matlab -nodesktop -r "myparameter=10;runme;exit"
