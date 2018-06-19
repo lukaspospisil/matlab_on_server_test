@@ -61,7 +61,7 @@ exit
 
 # run test as slurm job:
 
-- see batch script with the definition of the job
+- see batch script with the definition of the job (`%j` in file denotes the unique job id)
 ```
 cat myexample.batch
 ```
@@ -76,7 +76,7 @@ squeue
 (but maybe now there will be nothing since the "problem" is already computed)
 - maybe we made a mistake and we want to "kill" the process
 ```
-scancel [myjob_id]
+scancel [job_id]
 ```
 
 
